@@ -1,0 +1,114 @@
+/* Main font styling for Alan Sans */
+.alan-sans-main {
+  font-family: "Alan Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+*{
+  text-transform: uppercase;
+    letter-spacing: 1px;
+    color:aqua;
+    border-color: aqua;
+}
+
+/* Body background reset */
+body {
+  background-color: #030c16;
+  
+}
+
+/* Heading styling */
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Label styling */
+label {
+  font-weight: 500;
+  font-size: small;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing:2px
+}
+
+
+
+/* Input and textarea common styles */
+input,
+textarea {
+  font-size: large;
+  outline:none;
+  padding: 5px 14px;
+  border: transparent;
+  background-color: transparent;
+  margin-bottom: 16px;
+  width: 90%;
+  color: rgb(255, 255, 255);
+}
+
+/* Input specific styles */
+input {
+  border-bottom: #00eeff5e;
+  border-bottom-style: solid;
+}
+
+/* Placeholder text styling */
+::placeholder {
+  font-style: italic;
+  color:rgba(100, 172, 172, 0.325);
+}
+
+/* Textarea specific styles */
+textarea {
+  text-transform: none;
+  height: 120px;
+  resize: none;
+  text-align: justify;
+}
+
+/* Send button styling */
+input#send {
+  text-align: center;
+  width: 30%;
+  border-radius: 12px;
+  border-style: double;
+  border-color: aqua;
+  margin-inline-start: 35%;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+/* Form container styling */
+form {
+  padding: 35px 50px;
+  background-color: transparent;
+  border-style: double;
+  border-width: 5px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Send button hover effect */
+input#send:hover {
+  color: rgb(15, 18, 20);
+  background-color: aqua;
+  font-weight: 750;
+}
+
+/* Send button active effect */
+input#send:active {
+  background-color: #31e8f543;
+}
+
+/* Input hover effect */
+input:hover {
+  border-color: aqua;
+}
+
+/* End of contact form styles */
+
+/*Coded by Josol,Trichelle Mae - BSCpE3A */
