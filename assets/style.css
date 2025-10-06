@@ -1,5 +1,5 @@
 /* Main font styling for Alan Sans */
-.alan-sans-main {
+.alan-sans-main{
   font-family: "Alan Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
@@ -7,23 +7,26 @@
 }
 
 *{
-  text-transform: uppercase;
+    text-transform: uppercase;
     letter-spacing: 1px;
     color:aqua;
     border-color: aqua;
+    text-align:left;
+    letter-spacing: 2px;
 }
 
 /* Body background reset */
 body {
   background-color: #030c16;
-  
 }
 
+
 /* Heading styling */
-h1 {
+h1{
   text-align: center;
-  letter-spacing: 2px;
 }
+
+
 
 /* Label styling */
 label {
@@ -31,7 +34,6 @@ label {
   font-size: small;
   display: block;
   margin-bottom: 8px;
-  letter-spacing:2px
 }
 
 
@@ -47,6 +49,7 @@ textarea {
   margin-bottom: 16px;
   width: 90%;
   color: rgb(255, 255, 255);
+  letter-spacing: 1px;
 }
 
 /* Input specific styles */
@@ -59,6 +62,7 @@ input {
 ::placeholder {
   font-style: italic;
   color:rgba(100, 172, 172, 0.325);
+  letter-spacing: 1px;
 }
 
 /* Textarea specific styles */
@@ -80,6 +84,12 @@ input#send {
   background-color: transparent;
   font-weight: 500;
 }
+
+input#number::-webkit-outer-spin-button,
+input#number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 
 /* Form container styling */
 form {
@@ -111,4 +121,4 @@ input:hover {
 
 /* End of contact form styles */
 
-/*Coded by Josol,Trichelle Mae - BSCpE3A */
+/* Coded by Josol,Trichelle Mae - BSCpE3A */

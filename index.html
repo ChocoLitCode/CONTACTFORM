@@ -4,19 +4,24 @@
     <head>
         <title>Contact Me</title>
         <!-- Link to external CSS file -->
-        <link href="style.css" type="text/css" rel="stylesheet"/>
+        <link href="assets/style.css" type="text/css" rel="stylesheet"/>
         <!-- Import Google Fonts -->
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
         </style>
     </head>
     <body class="alan-sans-main"> 
+        <div>
             <!-- Page Header -->
              <header>
                 <h1>Contact Me.</h1>
             </header>
             <!-- Contact Form Start -->
-            <form id="form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!--Access Key from 3rd Party -->
+                <input type="hidden" name="access_key" value="9b271ead-2381-4162-b038-8308adb46a06">
+
                 <!-- First Name Field (Required) -->
                 <label for="name">Complete Name:*</label>
                 <input type="text" id="name" name="name" required="required" placeholder="Juan dela Cruz"/>
@@ -27,7 +32,7 @@
                 <br/>
                 <!-- Contact Number Field (Optional, Max 11 digits) -->
                 <label for="number">Contact Number:</label>            
-                <input type="phone" id="number" name="number"  maxlength="11" placeholder="Optional" />              
+                <input type="number" id="number" name="phone-num" placeholder="Optional" />              
                 <br/>
                 <!-- Subject Field (Required) -->
                 <label for="subject">Subject:*</label>            
@@ -36,11 +41,18 @@
                 <!-- Message Field (Required) -->
                 <label for="message">Message:*</label>            
                 <textarea id="message" name="message" required="required" placeholder="Type your message here..."></textarea>
+
+                <!-- Honeypot Spam Protection -->
+                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 
+                 <!-- Confirmation / Success Page -->
+                  <input type="hidden" name="redirect" value="https://chocolitcode.github.io/FORM-SENT/thanks.html">
+
                 <!-- Submit Button -->
                 <input type="submit" value="send" id="send" />
             </form>
             <!-- Contact Form End -->
     </body>
+    </div>
 </html>
 <!--Coded by Josol,Trichelle Mae - BSCpE3A-->
