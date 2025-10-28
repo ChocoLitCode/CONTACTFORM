@@ -1,4 +1,171 @@
-/* Main font styling for Alan Sans */
+/* Animated Background with Basic CSS Only */
+body {
+  background-color: #030c16;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 255, 255, 0.08) 0%, transparent 50%);
+  animation: backgroundMove 20s infinite linear;
+  z-index: -1;
+}
+
+@keyframes backgroundMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Floating particles */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.3) 2px, transparent 0),
+    radial-gradient(circle at 30% 40%, rgba(0, 255, 255, 0.2) 1px, transparent 0),
+    radial-gradient(circle at 50% 60%, rgba(0, 255, 255, 0.4) 3px, transparent 0),
+    radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.3) 2px, transparent 0),
+    radial-gradient(circle at 90% 10%, rgba(0, 255, 255, 0.2) 1px, transparent 0);
+  background-size: 200px 200px, 150px 150px, 180px 180px, 220px 220px, 170px 170px;
+  animation: particleFloat 25s infinite linear;
+  z-index: -1;
+}
+
+@keyframes particleFloat {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 200px 200px, 150px 150px, 180px 180px, 220px 220px, 170px 170px;
+  }
+}
+
+/* Pulsing glow effect */
+form {
+  position: relative;
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 17px;
+  background: linear-gradient(45deg, #00eeff, #00eeff5e, #00eeff);
+  background-size: 400% 400%;
+  animation: formGlow 3s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+@keyframes formGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced input animations */
+input, textarea {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+input::after, textarea::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, aqua, transparent);
+  transition: left 0.5s ease;
+}
+
+input:focus::after, textarea:focus::after {
+  left: 100%;
+}
+
+/* Button enhanced animation */
+input#send {
+  position: relative;
+  overflow: hidden;
+}
+
+input#send::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+input#send:hover::before {
+  left: 100%;
+}
+
+/* Subtle heading animation */
+h1 {
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: aqua;
+  animation: headingUnderline 2s ease-in-out infinite alternate;
+}
+
+@keyframes headingUnderline {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+/* Keep all your original styles below */
 .alan-sans-main{
   font-family: "Alan Sans", sans-serif;
   font-optical-sizing: auto;
@@ -15,20 +182,10 @@
     letter-spacing: 2px;
 }
 
-/* Body background reset */
-body {
-  background-color: #030c16;
-}
-
-
-/* Heading styling */
 h1{
   text-align: center;
 }
 
-
-
-/* Label styling */
 label {
   font-weight: 500;
   font-size: small;
@@ -36,9 +193,6 @@ label {
   margin-bottom: 8px;
 }
 
-
-
-/* Input and textarea common styles */
 input,
 textarea {
   font-size: large;
@@ -52,20 +206,17 @@ textarea {
   letter-spacing: 1px;
 }
 
-/* Input specific styles */
 input {
   border-bottom: #00eeff5e;
   border-bottom-style: solid;
 }
 
-/* Placeholder text styling */
 ::placeholder {
   font-style: italic;
   color:rgba(100, 172, 172, 0.325);
   letter-spacing: 1px;
 }
 
-/* Textarea specific styles */
 textarea {
   text-transform: none;
   height: 120px;
@@ -73,7 +224,6 @@ textarea {
   text-align: justify;
 }
 
-/* Send button styling */
 input#send {
   text-align: center;
   width: 30%;
@@ -90,8 +240,6 @@ input#number::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-
-/* Form container styling */
 form {
   padding: 35px 50px;
   background-color: transparent;
@@ -102,23 +250,16 @@ form {
   margin: auto;
 }
 
-/* Send button hover effect */
 input#send:hover {
   color: rgb(15, 18, 20);
   background-color: aqua;
   font-weight: 750;
 }
 
-/* Send button active effect */
 input#send:active {
   background-color: #31e8f543;
 }
 
-/* Input hover effect */
 input:hover {
   border-color: aqua;
 }
-
-/* End of contact form styles */
-
-/* Coded by Josol,Trichelle Mae - BSCpE3A */
