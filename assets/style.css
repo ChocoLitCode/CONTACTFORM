@@ -1,265 +1,132 @@
-/* Animated Background with Basic CSS Only */
-body {
-  background-color: #030c16;
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* Animated gradient background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(0, 255, 255, 0.08) 0%, transparent 50%);
-  animation: backgroundMove 20s infinite linear;
-  z-index: -1;
-}
-
-@keyframes backgroundMove {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-/* Floating particles */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.3) 2px, transparent 0),
-    radial-gradient(circle at 30% 40%, rgba(0, 255, 255, 0.2) 1px, transparent 0),
-    radial-gradient(circle at 50% 60%, rgba(0, 255, 255, 0.4) 3px, transparent 0),
-    radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.3) 2px, transparent 0),
-    radial-gradient(circle at 90% 10%, rgba(0, 255, 255, 0.2) 1px, transparent 0);
-  background-size: 200px 200px, 150px 150px, 180px 180px, 220px 220px, 170px 170px;
-  animation: particleFloat 25s infinite linear;
-  z-index: -1;
-}
-
-@keyframes particleFloat {
-  0% {
-    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
-  }
-  100% {
-    background-position: 200px 200px, 150px 150px, 180px 180px, 220px 220px, 170px 170px;
-  }
-}
-
-/* Pulsing glow effect */
-form {
-  position: relative;
-}
-
-form::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 17px;
-  background: linear-gradient(45deg, #00eeff, #00eeff5e, #00eeff);
-  background-size: 400% 400%;
-  animation: formGlow 3s ease-in-out infinite;
-  z-index: -1;
-  opacity: 0.7;
-}
-
-@keyframes formGlow {
-  0%, 100% {
-    background-position: 0% 50%;
-    opacity: 0.5;
-  }
-  50% {
-    background-position: 100% 50%;
-    opacity: 0.8;
-  }
-}
-
-/* Enhanced input animations */
-input, textarea {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-input::after, textarea::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, aqua, transparent);
-  transition: left 0.5s ease;
-}
-
-input:focus::after, textarea:focus::after {
-  left: 100%;
-}
-
-/* Button enhanced animation */
-input#send {
-  position: relative;
-  overflow: hidden;
-}
-
-input#send::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
-  transition: left 0.5s ease;
-}
-
-input#send:hover::before {
-  left: 100%;
-}
-
-/* Subtle heading animation */
-h1 {
-  position: relative;
-  display: inline-block;
-}
-
-h1::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: aqua;
-  animation: headingUnderline 2s ease-in-out infinite alternate;
-}
-
-@keyframes headingUnderline {
-  0% {
-    width: 0;
-    left: 0;
-  }
-  50% {
-    width: 100%;
-    left: 0;
-  }
-  100% {
-    width: 0;
-    left: 100%;
-  }
-}
-
-/* Keep all your original styles below */
-.alan-sans-main{
+/* Main font class for Alan Sans with optimal settings */
+.alan-sans-main {
   font-family: "Alan Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
+  font-optical-sizing: auto; /* Allows browser to optimize text rendering */
+  font-weight: 300; /* Light weight for regular text */
   font-style: normal;
 }
 
-*{
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color:aqua;
-    border-color: aqua;
-    text-align:left;
-    letter-spacing: 2px;
+/* Universal selector - applies to ALL elements on the page */
+* {
+  text-transform: uppercase; /* Convert all text to uppercase */
+  letter-spacing: 1px; /* Spread out letters for futuristic look */
+  color: aqua; /* Cyberpunk aqua text color */
+  border-color: aqua; /* Aqua color for all borders */
+  text-align: left; /* Default left alignment */
+  letter-spacing: 2px; /* Increased letter spacing for tech aesthetic */
 }
 
-h1{
-  text-align: center;
+/* Body styling - main page background and layout */
+body {
+  background-color: #030c16; /* Deep navy blue background for contrast */
+  margin: 0; /* Remove default browser margins */
+  padding: 20px; /* Add spacing around content */
+  font-family: "Alan Sans", sans-serif; /* Apply font to entire page */
 }
 
+/* Main heading styling */
+h1 {
+  text-align: center; /* Center align the main heading */
+  margin-bottom: 30px; /* Space below heading */
+}
+
+/* Form label styling */
 label {
-  font-weight: 500;
-  font-size: small;
-  display: block;
-  margin-bottom: 8px;
+  font-weight: 500; /* Medium weight for emphasis */
+  font-size: small; /* Smaller than input text */
+  display: block; /* Make labels block elements (own line) */
+  margin-bottom: 8px; /* Space between label and input */
 }
 
-input,
-textarea {
-  font-size: large;
-  outline:none;
-  padding: 5px 14px;
-  border: transparent;
-  background-color: transparent;
-  margin-bottom: 16px;
-  width: 90%;
-  color: rgb(255, 255, 255);
-  letter-spacing: 1px;
+/* Common styles for both input fields and textareas */
+input, textarea {
+  font-size: large; /* Larger text for better readability */
+  outline: none; /* Remove default browser focus outline */
+  padding: 8px 14px; /* Internal spacing */
+  border: transparent; /* Start with transparent border */
+  background-color: transparent; /* See-through background */
+  margin-bottom: 16px; /* Space between form fields */
+  width: 90%; /* Relative width within container */
+  color: rgb(255, 255, 255); /* White text color */
+  letter-spacing: 1px; /* Slightly spaced letters */
+  transition: all 0.3s ease; /* Smooth transitions for interactions */
 }
 
+/* Specific input field styling */
 input {
-  border-bottom: #00eeff5e;
-  border-bottom-style: solid;
+  border-bottom: 1px solid #00eeff5e; /* Bottom border only with transparency */
+  border-radius: 5px; /* Rounded corners */
 }
 
-::placeholder {
-  font-style: italic;
-  color:rgba(100, 172, 172, 0.325);
-  letter-spacing: 1px;
-}
-
+/* Textarea specific styling */
 textarea {
-  text-transform: none;
-  height: 120px;
-  resize: none;
-  text-align: justify;
+  border: 1px solid #00eeff5e; /* Full border */
+  border-radius: 4px; /* Rounded corners */
+  text-transform: none; /* Override universal uppercase for message text */
+  height: 120px; /* Fixed height */
+  resize: none; /* Prevent user resizing */
+  text-align: justify; /* Even text alignment */
 }
 
+/* Placeholder text styling for empty form fields */
+::placeholder {
+  font-style: italic; /* Italicized hint text */
+  color: rgba(100, 172, 172, 0.325); /* Semi-transparent aqua */
+  letter-spacing: 1px; /* Consistent letter spacing */
+}
+
+/* Send button specific styling */
 input#send {
-  text-align: center;
-  width: 30%;
-  border-radius: 12px;
-  border-style: double;
-  border-color: aqua;
-  margin-inline-start: 35%;
-  background-color: transparent;
-  font-weight: 500;
+  text-align: center; /* Center button text */
+  width: 30%; /* Relative width */
+  border-radius: 12px; /* More rounded corners for button */
+  border-style: double; /* Double border for emphasis */
+  border-color: aqua; /* Aqua border */
+  margin-inline-start: 35%; /* Center horizontally */
+  background-color: transparent; /* Transparent background */
+  font-weight: 500; /* Medium weight text */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 10px; /* Button padding */
+  transition: all 0.3s ease; /* Smooth hover transitions */
 }
 
-input#number::-webkit-outer-spin-button,
-input#number::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-form {
-  padding: 35px 50px;
-  background-color: transparent;
-  border-style: double;
-  border-width: 5px;
-  border-radius: 12px;
-  max-width: 400px;
-  margin: auto;
-}
-
+/* Send button hover state - interactive feedback */
 input#send:hover {
-  color: rgb(15, 18, 20);
-  background-color: aqua;
-  font-weight: 750;
+  color: rgb(15, 18, 20); /* Dark text for contrast */
+  background-color: aqua; /* Fill with aqua color */
+  font-weight: 750; /* Extra bold text */
+  transform: scale(1.05); /* Slight grow effect */
 }
 
+/* Send button active state - when being clicked */
 input#send:active {
-  background-color: #31e8f543;
+  background-color: #31e8f543; /* Semi-transparent aqua */
+  transform: scale(0.95); /* Slight shrink effect */
 }
 
-input:hover {
-  border-color: aqua;
+/* Form container styling */
+form {
+  padding: 35px 50px; /* Internal spacing */
+  background-color: transparent; /* See-through background */
+  border-style: double; /* Double border style */
+  border-width: 5px; /* Thick border */
+  border-radius: 12px; /* Rounded corners */
+  max-width: 400px; /* Maximum width for form */
+  margin: auto; /* Center form horizontally */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); /* Glowing aqua shadow */
 }
+
+/* Hover state for form fields */
+input:hover, textarea:hover {
+  border-color: aqua; /* Bright aqua border on hover */
+}
+
+/* Focus states for better accessibility - when field is selected */
+input:focus, textarea:focus {
+  border-color: aqua; /* Bright aqua border */
+  background-color: rgba(0, 255, 255, 0.1); /* Light aqua background */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Glow effect */
+  transform: scale(1.02); /* Slight pop-out effect */
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth bounce transition */
+}
+
